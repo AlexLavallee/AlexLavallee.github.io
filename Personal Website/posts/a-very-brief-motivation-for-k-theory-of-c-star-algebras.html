@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Very Brief Motivation for K-Theory of C*-algebras — Alex Lavallee</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="blog-post-page">
+  <main class="blog-post-main blog-post-article">
+    <a href="../index.html#home" class="return-button">Return to home</a>
+    <p class="post-updated">Last Updated: 05/20/2026</p>
+    <h1>A Very Brief Motivation for $K$-Theory of $C^*$-algebras</h1>
+    <p class="post-pdf-link"><a href="../assets/papers/The_Motivation_for_Operator_K_Theory.pdf">Download PDF</a></p>
+    <article>
+      <p>In my time as a student, I have never ceased to be amazed by the wit needed to blaze a new path through math. Fourier analysis, Galois theory, functional analysis &mdash; genius ideas brewed in the minds of the greatest mathematicians to live. One may think they could never dream up such ideas, yet on the first day of classes, a wonderful expos&eacute; of motivation illuminates how one could make such a discovery. Having lived with such motivations all my life, I picked up my first textbook on $K$-theory of $C^*$-algebras, and like a kid in their first literature class, I could only think: &ldquo;who, what, why, how?&rdquo; Alas, there is no kid here, so we venture on in discovering the motivation for operator $K$-theory.</p>
+
+      <p class="epigraph"><em>To unpathed waters, undreamed shores &mdash; William Shakespeare</em></p>
+
+      <p>The origins of $K$-theory begin in the breeding grounds of algebraic geometry (as many ideas seem to nowadays). Beginning with a complex projective algebraic manifold $X$, Grothendieck was able to define two Abelian groups, which encoded information about algebraic objects defined over $X$. Of these two groups, we are most concerned with $K^0(X)$ &mdash; a group defined by the vector bundles over $X$. Collecting the motivation for $K^0(X)$ and Bott&rsquo;s periodicity theorem, Atiyah and Hirzebruch birthed topological $K$-theory <a href="#ref-atiyah">[1]</a>.</p>
+
+      <p>To illustrate how topological $K$-theory came to be, we parallel Grothendieck&rsquo;s works for a topological space $Y$. Let $\text{Vect}(Y)$ denote the set of isomorphism classes of vector bundles over $Y$. One can show that with direct sums of vector bundles as an operation, $(\text{Vect}(Y), \oplus)$ is an Abelian semigroup. Pursuant of an Abelian group, we can force artificial inverses into $\text{Vect}(Y)$ by applying the Grothendieck construction. Thus, we are left with an Abelian group $K(Y)$, and in fact, a commutative ring when equipped with tensor products of vector bundles. With our $K$-group defined, it can be established that $K(\cdot)$ is a contravariant functor from the category of topological vector spaces $\textbf{Top}$ to the category of commutative rings $\textbf{CRing}$, and the rest of topological $K$-theory follows <a href="#ref-hatcher">[2]</a>.</p>
+
+      <p>Motivated by topological $K$-theory, we attempt to construct a $K$-theory for $C^*$-algebras. Such an analog already seems natural to us, as in the case of a unital commutative $C^*$-algebra $A$, we already know that the Gelfand-Naimark theorem identifies $A$ with $C(X)$ for some compact Hausdorff space $X$, and hence we can apply the topological $K$-theory from above. We begin with the case in which $A$ is unital. A natural first step is to define our vector bundles over $A$, but in trying to do so, we immediately run into an issue &mdash; $A$ is not commutative. At first glance, this doesn&rsquo;t seem problematic, but when you dive into the details, there&rsquo;s no longer a nice notion of the local trivialization of a vector bundle. To skim over the hard details, one can see where difficulties arise in trying to define a homeomorphism between the neighbourhood of a point in $A$ and the pre-image of the neighbourhood under the bundle projection. We thus need to generalize our notion of vector bundle in a manner that doesn&rsquo;t require a notion of geometry for $A$.</p>
+
+      <p>Just when it all seems to come crumbling down, we find ourselves a cop out. Let&rsquo;s take a look at this bundle of bandaids we have found for our theory:</p>
+
+      <div class="theorem">
+        <p class="theorem-title"><strong>Theorem.</strong> The Serre-Swan theorem</p>
+        <p>Let $X$ be a compact Hausdorff space, and $C(X)$ it&rsquo;s ring of continuous complex-valued functions. Then, the category of complex finite-rank vector bundles over $X$ is equivalent to the category of finitely generated projective modules over $C(X)$.</p>
+      </div>
+
+      <p>It follows that in simple cases, we can view the study of vector bundles over $X$ as equivalent to the study of finitely generated projective modules over $C(X)$. With $C(X)$ being isomorphic to a unital commutative $C^*$-algebra, we can then try to study finitely generated projective modules over arbitrary unital $C^*$-algebras. Indeed, for a unital $C^*$-algebra $A$, recall that we define $P_\infty(A) = \bigcup_{n \in \mathbb{N}} \{p \in M_n(A): p \ \text{is a projection}\}$. We further say $p \sim q$ if there exists a (not necessarily square) matrix $v$ such that $p = v v^*$ and $q = v^* v$. The set $P_\infty(A)/\sim$ with operation $p \oplus q = \text{diag}(p, q)$ is isomorphic to the set of finitely generated projective modules over $A$, and considering the quotient under stable equivalence followed by the Grothendieck construction, we recover an abelian group $K_0(A)$, from which the $K$-theory of $C^*$-algebras follows <a href="#ref-rordam">[3]</a>.</p>
+
+      <p>Ultimately, the motivation for operator $K$-theory is the bridge provided by the Serre-Swan theorem. Defining $K$-theory via the isomorphism classes of vector bundles inherently relies on the geometry of the topological base space. By bridging from a geometric theory to a purely algebraic theory defined via finitely generated projective modules, we can then define our $K$-theory for $C^*$-algebras.</p>
+
+      <section class="references bibliography-plain">
+        <h2>References</h2>
+        <ol>
+          <li id="ref-atiyah">M. Atiyah. <em>K-theory Past and Present</em>. arXiv, 2000. Available at <a href="https://arxiv.org/abs/math/0012213v1">https://arxiv.org/abs/math/0012213v1</a></li>
+          <li id="ref-hatcher">A. Hatcher. <em>Vector Bundles and K-theory</em>. 2017. Available at <a href="https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf">https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf</a></li>
+          <li id="ref-rordam">M. R&oslash;rdam, F. Larsen, N.J. Laustsen. <em>An Introduction to $K$-theory for $C^*$-algebras</em>. London Mathematical Society Student Texts, 2000.</li>
+        </ol>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
