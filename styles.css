@@ -448,6 +448,10 @@ main {
   margin-bottom: 1rem;
 }
 
+.subsection-heading {
+  margin-top: 1rem;
+}
+
 .notes-list {
   list-style: disc;
   margin-top: 1rem;
